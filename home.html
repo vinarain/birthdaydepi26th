@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special For You</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#f5ebe0,#e3d5ca,#d5bdaf);
+text-align:center;
+color:#6b4f4f;
+overflow:hidden;
+}
+
+.photo{
+width:220px;
+height:220px;
+border-radius:50%;
+border:8px solid white;
+object-fit:cover;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+margin-top:40px;
+}
+
+.text{
+opacity:0;
+transition:2s;
+max-width:520px;
+margin:18px auto;
+font-size:18px;
+line-height:1.7;
+}
+
+.playBtn{
+margin-top:20px;
+background:#7f5539;
+color:white;
+border:none;
+padding:14px 26px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<h2>🎂 Happy Birthday Depi Akbar ✨</h2>
+
+<img src="foto.jpg" class="photo">
+
+<div class="text" id="t1">
+Hari ini adalah hari spesial...
+</div>
+
+<div class="text" id="t2">
+Semoga semua mimpi bebe bisa tercapai ✨
+</div>
+
+<div class="text" id="t3">
+Terima kasih sudah hadir membawa warna 🤎
+</div>
+
+<div class="text" id="t4">
+Have the cutest birthday ever 💕
+</div>
+
+<button class="playBtn" onclick="playMusic()">
+🎵 Putar Lagu
+</button>
+
+<script>
+
+/* TEXT TIMING */
+setTimeout(()=>show("t1"),1000);
+setTimeout(()=>show("t2"),6000);
+setTimeout(()=>show("t3"),11000);
+setTimeout(()=>show("t4"),16000);
+
+function show(id){
+document.getElementById(id).style.opacity=1;
+}
+
+/* MUSIC */
+function playMusic(){
+window.open(
+"https://drive.google.com/file/d/195LFn8isrDQUHUq6xpBI6Og_VH6asnRp/preview",
+"_blank"
+);
+}
+
+/* HEARTS */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="🤎";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+
+</script>
+
+</body>
+  </html>
